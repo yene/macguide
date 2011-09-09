@@ -1,0 +1,84 @@
+*{margin:0;padding:0;}
+html{width:100%;height:100%;}
+
+/**
+    === General Settings ===
+*/
+body{
+    font-size: 100%;
+    line-height: 100%;
+    height: 100%;
+    font-family: "Helvetica", "Arial";
+    background: #f7f7f7;
+}
+#wrapper{
+    position: relative;
+    display: block;
+    width:970px;
+    margin:0 auto;
+    padding-bottom:50px;
+}
+#header{
+    position: relative;
+    width:100%;
+    height:210px;
+    background:url(../img/header_bg.jpg) no-repeat top center;
+}
+
+.clear{clear:both;}
+
+#grid{position:fixed;display: block;width:100%;height:100%;background: url(../img/grid.png) repeat-y center;z-index: 1000;}
+
+#index a:link{text-decoration: none;color:#628ab3;}
+#index a:visited{text-decoration: none;color:#91abc9;}
+#index a:hover{text-decoration: none;color:#91abc9;}
+#index a:active{color: #3463B8 !important;text-shadow: 0 0 3px #4989FF;}
+
+/**
+    === Blueprint Divs Settings ===
+*/
+.sidebar{postion:relative;display:block;width:240px;text-align:center;margin-left:15px;float:left;}
+#container_content{postion:relative;display:block;width:700px;margin-left:15px;float:right;}
+#footer{height:90px;background: url(../img/gui.png) repeat-x 0 -35px;text-align:center;line-height:90px;}
+/**
+    === Blueprint Span Settings ===
+*/
+#header span{width:715px;text-align:center;float:right;margin-top:34px;}
+.button_versions{display:inline-block;height:35px;width:190px;background: url(../img/gui.png) no-repeat 0px 0px;}
+.leopard{width:27px;height:27px;background: url(../img/gui.png) no-repeat -241px -136px;text-indent:-5000px;overflow:hidden;margin:7px 0 0 5px;}
+.lion{width:27px;height:27px;background: url(../img/gui.png) no-repeat -275px -136px;text-indent:-5000px;overflow:hidden;margin:7px 0 0 5px;}
+
+/**
+    === Content Divs Settings ===
+*/
+#container_content{}
+#container_content article{border-radius:5px;border:1px solid #9e9e9e;width:630px;margin:0 auto 20px auto;background: #f2f2f2 url(../img/article.png) repeat-x;}
+#container_content header{display:block;height:41px;line-height:40px;position:relative;padding-right:15px;}
+#container_content header span{float:right;}
+#code_body{padding:15px;border-top:1px solid white;}
+#code_body p{color:#808080;font-size:13px;margin:5px 0 0px;}
+
+/**
+    === Content Lists Settings ===
+*/
+.sidebar ul{list-style: none;display:block;background: url(../img/aside.jpg) no-repeat top right;margin:40px auto 0 auto;padding:0;min-height:500px;text-shadow: 0 1px 0 white;}
+.sidebar li{width:180px;margin:0 auto;padding:35px 0;}
+li.seperator{height:2px;background: url(../img/gui.png) no-repeat 0px -136px;width:100%;margin:0;padding:0;}
+/**
+    === Fonts Settings ===
+*/
+
+h1{font-size:28px;font-weight:300;text-align:center;}
+  #header h1{display:block;width:715px;float:right;line-height:30px;margin-top:45px;color:#a6a6a6;text-shadow: 0 2px 0px white;}
+  #header h1 strong{color:black;}
+h2{font-size:18px;font-weight:bold;text-align:left;display:inline-block;background: url(../img/gui.png) no-repeat -192px 10px;margin-left:15px;padding-left:28px;text-shadow: 0 1px 0 white;}
+  
+#header span{font-size:16px;line-height:25px;color:#4c4c4c;}
+#code_body{font-size:11px;}
+.warning{font-size:13px;line-height:20px !important;color:#a6a6a6;}
+.sidebar ul{color:#808080;line-height:25px;font-size:16px;}
+
+.button_versions{font-weight:bold;font-size:16px;color:#4c4c4c;text-shadow: 0 2px 0 white;line-height:37px;margin-top:5px;}
+.button_versions em{background: url(../img/gui.png) no-repeat -241px -165px;height:16px;width:16px;display:inline-block;margin-left:5px;margin-bottom:-3px;}
+
+#footer{color:#4c4c4c;text-shadow: 0 1px 0 white;font-size:13px;}
