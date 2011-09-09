@@ -21,7 +21,7 @@ body{
 #header{
     position: relative;
     width:100%;
-    height:210px;
+    height:196px;
     background:url(../img/header_bg.jpg) no-repeat top center;
 }
 
@@ -61,7 +61,7 @@ body{
 /**
     === Content Lists Settings ===
 */
-.sidebar ul{list-style: none;display:block;background: url(../img/aside.jpg) no-repeat top right;margin:40px auto 0 auto;padding:0;min-height:500px;text-shadow: 0 1px 0 white;}
+.sidebar ul{list-style: none;display:block;background: url(../img/aside.jpg) no-repeat top right;margin:0 auto 0 auto;padding:0;min-height:500px;text-shadow: 0 1px 0 white;}
 .sidebar li{width:180px;margin:0 auto;padding:35px 0;}
 li.seperator{height:2px;background: url(../img/gui.png) no-repeat 0px -136px;width:100%;margin:0;padding:0;}
 /**
@@ -69,7 +69,7 @@ li.seperator{height:2px;background: url(../img/gui.png) no-repeat 0px -136px;wid
 */
 
 h1{font-size:28px;font-weight:300;text-align:center;}
-  #header h1{display:block;width:715px;float:right;line-height:30px;margin-top:45px;color:#a6a6a6;text-shadow: 0 2px 0px white;}
+  #header h1{display:block;width:715px;float:right;line-height:30px;margin-top:100px;color:#a6a6a6;text-shadow: 0 2px 0px white;padding-right: 80px; text-align: right;}
   #header h1 strong{color:black;}
 h2{font-size:18px;font-weight:bold;text-align:left;display:inline-block;background: url(../img/gui.png) no-repeat -192px 10px;margin-left:15px;padding-left:28px;text-shadow: 0 1px 0 white;}
   
@@ -78,7 +78,7 @@ h2{font-size:18px;font-weight:bold;text-align:left;display:inline-block;backgrou
 .warning{font-size:13px;line-height:20px !important;color:#a6a6a6;}
 .sidebar ul{color:#808080;line-height:25px;font-size:16px;}
 
-.button_versions{font-weight:bold;font-size:16px;color:#4c4c4c;text-shadow: 0 2px 0 white;line-height:37px;margin-top:5px;}
+.button_versions{ display:none; font-weight:bold;font-size:16px;color:#4c4c4c;text-shadow: 0 2px 0 white;line-height:37px;margin-top:5px;}
 .button_versions em{background: url(../img/gui.png) no-repeat -241px -165px;height:16px;width:16px;display:inline-block;margin-left:5px;margin-bottom:-3px;}
 
 #footer{color:#4c4c4c;text-shadow: 0 1px 0 white;font-size:13px;}

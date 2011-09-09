@@ -10,137 +10,129 @@
 <body id="index">
 <div id="wrapper">
 	<div id="header">
-		<h1><strong>MACGUIDE</strong> Change your default Settings!</h1>
+		<h1>change your defaults</h1>
 		<br class="clear" />
-		<span>Get in Contact to <a href="#">submit</a> new Commands or just say <a href="#">Hello</a>.<br />We love both and appreciate any kind of Feedback.</span><br class="clear" />
     </div>
-  
-  <div id="content">
-      <div class="sidebar">
-        <span class="button_versions">All Versions<em>&nbsp;</em></span>
-        
-        <ul>
-          <li>Stay connected and <a href="#">Bookmark</a> or <a href="#">Follow</a> Macguide on Twitter</li>
-          <li class="seperator">&nbsp;</li>
-          <li>Copy & Paste or Type the Command in your <a href="#">Terminal Application</a>*</li>
-          <li class="seperator">&nbsp;</li>
-          <li class="warning">*Be warned, every task that you type in your Terminal could harm your Mac!</li>
-          </ul>
-        </div>
-          <div id="container_content">
-            <section>
+    <div id="content">
+    	<div class="sidebar">
+    	<span class="button_versions">All Versions<em>&nbsp;</em></span>
+		<ul>
+			<li>Copy & Paste or Type the Command in your Terminal Application*</li>
+			<li class="seperator">&nbsp;</li>
+			<li class="warning">*Be warned, every task that you type in your Terminal could harm your Mac!</li>
+		</ul>
+	</div>
+	<div id="container_content">
+		<section>
+			<article>
+				<header>
+					<h2>Remove Source Code from the Spotlight results</h2>
+					<span class="lion">lion</span>
+				</header>
+				<div id="code_body">
+					<pre>defaults write com.apple.spotlight orderedItems -array-add '{ "enabled" = "0" ; "name" = "SOURCE"; }'</pre>
+				</div>
+			</article>
 		<article>
-			<header>
-				<h2>Remove Source Code from the Spotlight results</h2>
-				<span class="lion">lion</span>
-			</header>
-			<div id="code_body">
-				<pre>defaults write com.apple.spotlight orderedItems -array-add '{ "enabled" = "0" ; "name" = "SOURCE"; }'</pre>
-			</div>
+		<header>
+		<h2>Open screen sharing</h2>
+		<span class="leopard">leopard</span>
+		</header>
+		<div id="code_body">
+		<pre>open vnc://computername.local</pre>
+		</div>
 		</article>
 		<article>
-			<header>
-				<h2>Open screen sharing</h2>
-				<span class="leopard">leopard</span>
-			</header>
-			<div id="code_body">
-				<pre>open vnc://computername.local</pre>
-			</div>
+		<header>
+		<h2>Show hidden files</h2>
+		<span class="leopard">leopard</span>
+		</header>
+		<div id="code_body">
+		<pre>defaults write com.apple.finder AppleShowAllFiles true</pre>
+		</div>
 		</article>
 		<article>
-			<header>
-				<h2>Show hidden files</h2>
-				<span class="leopard">leopard</span>
-			</header>
-			<div id="code_body">
-				<pre>defaults write com.apple.finder AppleShowAllFiles true</pre>
-			</div>
+		<header>
+		<h2>2D Dock</h2>
+		<span class="lion">lion</span>
+		<span class="leopard">leopard</span>
+		</header>
+		<div id="code_body">
+		<pre>defaults write com.apple.dock no-glass -boolean YES <br>killall Dock</pre>
+		</div>
 		</article>
 		<article>
-			<header>
-				<h2>2D Dock</h2>
-				<span class="lion">lion</span>
-				<span class="leopard">leopard</span>
-			</header>
-			<div id="code_body">
-				<pre>defaults write com.apple.dock no-glass -boolean YES <br>killall Dock</pre>
-			</div>
+		<header>
+		<h2>Make hidden Applications Icons semi-transparent</h2>
+		<span class="lion">lion</span>
+		<span class="leopard">leopard</span>
+		</header>
+		<div id="code_body">
+		<pre>defaults write com.apple.Dock showhidden -bool YES <br>killall Dock</pre>
+		</div>
 		</article>
 		<article>
-			<header>
-				<h2>Make hidden Applications Icons semi-transparent</h2>
-				<span class="lion">lion</span>
-				<span class="leopard">leopard</span>
-			</header>
-			<div id="code_body">
-				<pre>defaults write com.apple.Dock showhidden -bool YES <br>killall Dock</pre>
-			</div>
+		<header>
+		<h2>Re-Index Spotlight</h2>
+		<span class="lion">lion</span>
+		<span class="leopard">leopard</span>
+		</header>
+		<div id="code_body">
+		<pre>sudo mdutil -E -p "/Volumes/Macintosh HD"</pre>
+		</div>
 		</article>
 		<article>
-			<header>
-				<h2>Re-Index Spotlight</h2>
-				<span class="lion">lion</span>
-				<span class="leopard">leopard</span>
-			</header>
-			<div id="code_body">
-				<pre>sudo mdutil -E -p "/Volumes/Macintosh HD"</pre>
-			</div>
+		<header>
+		<h2>Screencapture</h2>
+		<span class="lion">lion</span>
+		<span class="leopard">leopard</span>
+		</header>
+		<div id="code_body">
+		<p>Screenshot file format</p>
+		<pre>defaults write com.apple.screencapture type png</pre>
+		<p>Screenshot name</p>
+		<pre>defaults write com.apple.screencapture name ScreenShot</pre>
+		<p>Screenshot Location</p>
+		<pre>defaults write com.apple.screencapture location [path]</pre>
+		</div>
 		</article>
 		<article>
-			<header>
-				<h2>Screencapture</h2>
-				<span class="lion">lion</span>
-				<span class="leopard">leopard</span>
-			</header>
-			<div id="code_body">
-				<p>Screenshot file format</p>
-				<pre>defaults write com.apple.screencapture type png</pre>
-				<p>Screenshot name</p>
-				<pre>defaults write com.apple.screencapture name ScreenShot</pre>
-				<p>Screenshot Location</p>
-				<pre>defaults write com.apple.screencapture location [path]</pre>
-			</div>
+		<header>
+		<h2>Disable Time Machine warning</h2>
+		<span class="lion">lion</span>
+		<span class="leopard">leopard</span>
+		</header>
+		<div id="code_body">
+		<pre>defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool YES</pre>
+		</div>
 		</article>
 		<article>
-			<header>
-				<h2>Disable Time Machine warning</h2>
-				<span class="lion">lion</span>
-				<span class="leopard">leopard</span>
-			</header>
-			<div id="code_body">
-				<pre>defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool YES</pre>
-			</div>
+		<header>
+		<h2>Disable .ds-store on network shares</h2>
+		<span class="lion">lion</span>
+		<span class="leopard">leopard</span>
+		</header>
+		<div id="code_body">
+		<pre>defaults write com.apple.desktopservices DSDontWriteNetworkStores true</pre>
+		</div>
 		</article>
 		<article>
-			<header>
-				<h2>Disable .ds-store on network shares</h2>
-				<span class="lion">lion</span>
-				<span class="leopard">leopard</span>
-			</header>
-			<div id="code_body">
-				<pre>defaults write com.apple.desktopservices DSDontWriteNetworkStores true</pre>
-			</div>
+		<header>
+		<h2>Uninstalling Xcode Developer Tools</h2>
+		<span class="lion">lion</span>
+		<span class="leopard">leopard</span>
+		</header>
+		<div id="code_body">
+		<pre>sudo /Developer/Library/uninstall-devtools --mode=all</pre>
+		</div>
 		</article>
-		<article>
-			<header>
-				<h2>Uninstalling Xcode Developer Tools</h2>
-				<span class="lion">lion</span>
-				<span class="leopard">leopard</span>
-			</header>
-			<div id="code_body">
-				<pre>sudo /Developer/Library/uninstall-devtools --mode=all</pre>
-			</div>
-		</article>
-	</section>
-
-            </div>
-            <br class="clear" />
-    </div>
-    
-
+		</section>
+	</div>
+	<br class="clear" />
 </div>
-    
-  <div id="footer">
-    All Rights Reserved by <b>Macguide.org</b> ©2011 - 2012 • Subscribe to the <b>RSS Feed</b> • Design by <b>Falseone®</b></div>
+</div>
+
+<div id="footer">
+All Rights Reserved by <b>Macguide.org</b> ©2011 - 2012 • Subscribe to the <b>RSS Feed</b> • Design by <b>Falseone®</b></div>
 </body>
 </html>
