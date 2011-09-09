@@ -17,39 +17,58 @@
     	<div class="sidebar">
     	<span class="button_versions">All Versions<em>&nbsp;</em></span>
 		<ul>
-			<li>Copy & Paste or Type the Command in your Terminal Application*</li>
+			<li>Copy & Paste Commands into your Terminal.app*</li>
 			<li class="seperator">&nbsp;</li>
-			<li class="warning">*Be warned, every task that you type in your Terminal could harm your Mac!</li>
+			<li class="warning">*Be warned, every task that you type in your Terminal could harm your Mac!</li>
 		</ul>
 	</div>
 	<div id="container_content">
-		<section>
-			<article>
-				<header>
-					<h2>Remove Source Code from the Spotlight results</h2>
-					<span class="lion">lion</span>
-				</header>
-				<div id="code_body">
-					<pre>defaults write com.apple.spotlight orderedItems -array-add '{ "enabled" = "0" ; "name" = "SOURCE"; }'</pre>
-				</div>
-			</article>
+	<section>
 		<article>
-		<header>
-		<h2>Open screen sharing</h2>
-		<span class="leopard">leopard</span>
-		</header>
-		<div id="code_body">
-		<pre>open vnc://computername.local</pre>
-		</div>
+			<header>
+				<h2>Remove Source Code from the Spotlight results</h2>
+				<span class="lion">lion</span>
+			</header>
+			<div id="code_body">
+				<pre>defaults write com.apple.spotlight orderedItems -array-add '{ "enabled" = "0" ; "name" = "SOURCE"; }'</pre>
+			</div>
 		</article>
 		<article>
-		<header>
-		<h2>Show hidden files</h2>
-		<span class="leopard">leopard</span>
-		</header>
-		<div id="code_body">
-		<pre>defaults write com.apple.finder AppleShowAllFiles true</pre>
-		</div>
+			<header>
+				<h2>Show the Library folder</h2>
+				<span class="lion">lion</span>
+			</header>
+			<div id="code_body">
+				<pre>chflags nohidden ~/Library</pre>
+			</div>
+		</article>
+		<article>
+			<header>
+				<h2>Show hidden files</h2>
+				<span class="lion">lion</span>
+				<span class="leopard">leopard</span>
+			</header>
+			<div id="code_body">
+				<pre>defaults write com.apple.finder AppleShowAllFiles true</pre>
+			</div>
+		</article>
+		<article>
+			<header>
+				<h2>Disable auto-correct</h2>
+				<span class="lion">lion</span>
+			</header>
+			<div id="code_body">
+				<pre>defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false</pre>
+			</div>
+		</article>
+		<article>
+			<header>
+				<h2>Disable press-and-hold for keys in favor of key repeat</h2>
+				<span class="lion">lion</span>
+			</header>
+			<div id="code_body">
+				<pre>defaults write -g ApplePressAndHoldEnabled -bool false</pre>
+			</div>
 		</article>
 		<article>
 		<header>
@@ -70,6 +89,16 @@
 		<div id="code_body">
 		<pre>defaults write com.apple.Dock showhidden -bool YES <br>killall Dock</pre>
 		</div>
+		</article>
+		<article>
+			<header>
+				<h2>Enable full keyboard access for all controls</h2>
+				<span class="lion">lion</span>
+				<span class="leopard">leopard</span>
+			</header>
+			<div id="code_body">
+				<pre>defaults write NSGlobalDomain AppleKeyboardUIMode -int 3</pre>
+			</div>
 		</article>
 		<article>
 		<header>
@@ -108,12 +137,12 @@
 		</article>
 		<article>
 		<header>
-		<h2>Disable .ds-store on network shares</h2>
+		<h2>Disable .DS_Store files on network volumes</h2>
 		<span class="lion">lion</span>
 		<span class="leopard">leopard</span>
 		</header>
 		<div id="code_body">
-		<pre>defaults write com.apple.desktopservices DSDontWriteNetworkStores true</pre>
+		<pre>defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true</pre>
 		</div>
 		</article>
 		<article>
@@ -125,6 +154,17 @@
 		<div id="code_body">
 		<pre>sudo /Developer/Library/uninstall-devtools --mode=all</pre>
 		</div>
+		</article>
+		<article>
+			<header>
+				<h2>more nice Terminal tricks</h2>
+				<span class="lion">lion</span>
+				<span class="leopard">leopard</span>
+			</header>
+			<div id="code_body">
+				<p>Open screen sharing</p>
+				<pre>open vnc://computername.local</pre>
+			</div>
 		</article>
 		</section>
 	</div>
