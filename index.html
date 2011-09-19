@@ -63,6 +63,15 @@
 		</article>
 		<article>
 			<header>
+				<h2>Disable local Time Machine snapshots</h2>
+				<span class="lion">lion</span>
+			</header>
+			<div id="code_body">
+				<pre>sudo tmutil disablelocal</pre>
+			</div>
+		</article>
+		<article>
+			<header>
 				<h2>Disable press-and-hold for keys in favor of key repeat</h2>
 				<span class="lion">lion</span>
 			</header>
@@ -137,6 +146,16 @@
 		</article>
 		<article>
 		<header>
+		<h2>Disable dictionary results in Spotlight</h2>
+		<span class="lion">lion</span>
+		<span class="leopard">leopard</span>
+		</header>
+		<div id="code_body">
+		<pre>defaults write com.apple.spotlight DictionaryLookupEnabled NO</pre>
+		</div>
+		</article>
+		<article>
+		<header>
 		<h2>Disable .DS_Store files on network volumes</h2>
 		<span class="lion">lion</span>
 		<span class="leopard">leopard</span>
@@ -164,6 +183,12 @@
 			<div id="code_body">
 				<p>Open screen sharing</p>
 				<pre>open vnc://computername.local</pre>
+				<p>Open current folder in Finder</p>
+				<pre>open .</pre>
+				<p>Restart Finder</p>
+				<pre>killall Finder</pre>
+				<p>Restart Dock</p>
+				<pre>killall Dock</pre>
 			</div>
 		</article>
 		</section>
