@@ -24,13 +24,24 @@
 	</div>
 	<div id="container_content">
 	<section>
+
 		<article>
 			<header>
-				<h2>Prevent Mac from falling asleep for an hour</h2>
+				<h2>Open Wi-Fi/Bonjour Scanner</h2>
 				<span class="lion">lion</span>
 			</header>
 			<div id="code_body">
-				<pre>caffeinate -u -t 3600</pre>
+				<pre>open /System/Library/CoreServices/Wi-Fi\ Diagnostics.app/</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
+				<h2>Prevent Mac from falling asleep</h2>
+				<span class="lion">lion</span>
+			</header>
+			<div id="code_body">
+				<pre>caffeinate -i</pre>
 			</div>
 		</article>
 
@@ -192,6 +203,8 @@
 				<pre>killall Dock</pre>
 				<p>Start a web server, publish the current directory</p>
 				<pre>python -m SimpleHTTPServer</pre>
+				<p>Prevent Mac from falling asleep for an hour</p>
+				<pre>caffeinate -u -t 3600</pre>
 			</div>
 		</article>
 		</section>
