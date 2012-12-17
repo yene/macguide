@@ -55,6 +55,11 @@ body{
 #container_content article{border-radius:5px;border:1px solid #9e9e9e;width:630px;margin:0 auto 20px auto;background: #f2f2f2 url(../img/article.png) repeat-x;}
 #container_content header{display:block;height:41px;line-height:40px;position:relative;padding-right:15px;}
 #container_content header span{float:right;}
+#container_content a:link{text-decoration: none;color:black;}
+#container_content a:visited{text-decoration: none;color:black;}
+#container_content a:hover{text-decoration: underline;color:black;}
+#index a:active{color: black !important;text-shadow: 0 0 3px #CCCCCC;}
+
 #code_body{padding:15px;border-top:1px solid white;}
 #code_body p{color:#808080;font-size:13px;margin:5px 0 0px;}
 
