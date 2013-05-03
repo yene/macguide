@@ -205,7 +205,7 @@
 
 		<article>
 			<header>
-				<h2><a name="Uninstalling-Xcode-Developer-Tools" href="#Uninstalling-Xcode-Developer-Tools">Uninstalling Xcode Developer Tools</a></h2>
+				<h2><a name="Uninstall-Xcode-Developer-Tools" href="#Uninstall-Xcode-Developer-Tools">Uninstall Xcode Developer Tools</a></h2>
 				<span class="lion">lion</span>
 				<span class="mountain-lion">mountain lion</span>
 			</header>
@@ -232,6 +232,17 @@
 			</header>
 			<div id="code_body">
 				<pre>open /System/Library/CoreServices/Wi-Fi\ Diagnostics.app/</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
+				<h2><a name="Turn-Off-Dashboard" href="#Turn-Off-Dashboard">Turn Off Dashboard</a></h2>
+				<span class="lion">lion</span>
+				<span class="mountain-lion">mountain lion</span>
+			</header>
+			<div id="code_body">
+				<pre>defaults write com.apple.dashboard mcx-disabled -boolean YES;killall Dock</pre>
 			</div>
 		</article>
 
