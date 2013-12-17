@@ -26,9 +26,17 @@
 
 		<article>
 			<header>
+				<h2><a name="Remove-Others-From-Spotlight" href="#Remove-Others-From-Spotlight">Remove the Others category from Spotlight</a></h2>
+			</header>
+			<div id="code_body">
+				<pre>defaults write com.apple.spotlight orderedItems -array-add "<dict><key>enabled</key><false/><key>name</key><string>OTHER</string></dict>";</pre>
+				<pre>killall SystemUIServer</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
 				<h2><a name="Show-the-Library-folder" href="#Show-the-Library-folder">Show the Library folder</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>chflags nohidden ~/Library</pre>
@@ -38,7 +46,6 @@
 		<article>
 			<header>
 				<h2><a name="Remove-iCloud-as-Default-Save-Location" href="#Remove-iCloud-as-Default-Save-Location">Remove iCloud as Default Save Location</a></h2>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false </pre>
@@ -48,8 +55,6 @@
 		<article>
 			<header>
 				<h2><a name="Show-hidden-files" href="#Show-hidden-files">Show hidden files</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>defaults write com.apple.finder AppleShowAllFiles true</pre>
@@ -59,8 +64,6 @@
 		<article>
 			<header>
 				<h2><a name="Disable-auto-correct" href="#Disable-auto-correct">Disable auto-correct</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false</pre>
@@ -70,7 +73,6 @@
 		<article>
 			<header>
 				<h2><a name="Prevent-Mac-from-falling-asleep" href="#Prevent-Mac-from-falling-asleep">Prevent Mac from falling asleep</a></h2>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>caffeinate -i</pre>
@@ -80,8 +82,6 @@
 		<article>
 			<header>
 				<h2><a name="Disable-local-Time-Machine-snapshots" href="#Disable-local-Time-Machine-snapshots">Disable local Time Machine snapshots</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>sudo tmutil disablelocal</pre>
@@ -91,8 +91,6 @@
 		<article>
 			<header>
 				<h2><a name="Disable-press-and-hold" href="#Disable-press-and-hold">Disable press-and-hold for keys in favor of key repeat</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>defaults write -g ApplePressAndHoldEnabled -bool false</pre>
@@ -113,8 +111,6 @@
 		<article>
 			<header>
 				<h2><a name="Make-hidden-Applications-Icons-semi-transparent" href="#Make-hidden-Applications-Icons-semi-transparent">Make hidden Applications Icons semi-transparent</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>defaults write com.apple.Dock showhidden -bool true;killall Dock</pre>
@@ -124,8 +120,6 @@
 		<article>
 			<header>
 				<h2><a name="Enable-full-keyboard-access-for-all-controls" href="#Enable-full-keyboard-access-for-all-controls">Enable full keyboard access for all controls</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>defaults write NSGlobalDomain AppleKeyboardUIMode -int 3</pre>
@@ -135,8 +129,6 @@
 		<article>
 			<header>
 				<h2><a name="Re-Index-Spotlight" href="#Re-Index-Spotlight">Re-Index Spotlight</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>sudo mdutil -E -p "/Volumes/Macintosh HD"</pre>
@@ -146,8 +138,6 @@
 		<article>
 			<header>
 				<h2><a name="Remove-Duplicates-from-the-Open-With-Menu" href="#Remove-Duplicates-from-the-Open-With-Menu">Remove Duplicates from the "Open With" Menu</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder</pre>
@@ -157,8 +147,6 @@
 		<article>
 			<header>
 				<h2><a name="Screencapture" href="#Screencapture">Screencapture</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<p>Screenshot file format</p>
@@ -173,8 +161,6 @@
 		<article>
 			<header>
 				<h2><a name="Disable-Time-Machine-warning" href="#Disable-Time-Machine-warning">Disable Time Machine warning</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true</pre>
@@ -184,8 +170,6 @@
 		<article>
 			<header>
 				<h2><a name="Disable-dictionary-results-in-Spotlight" href="#Disable-dictionary-results-in-Spotlight">Disable dictionary results in Spotlight</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>defaults write com.apple.spotlight DictionaryLookupEnabled NO</pre>
@@ -195,8 +179,6 @@
 		<article>
 			<header>
 				<h2><a name="Disable-DS-Store-files" href="#Disable-DS-Store-files">Disable .DS_Store files on network volumes</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true</pre>
@@ -205,20 +187,7 @@
 
 		<article>
 			<header>
-				<h2><a name="Uninstall-Xcode-Developer-Tools" href="#Uninstall-Xcode-Developer-Tools">Uninstall Xcode Developer Tools</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
-			</header>
-			<div id="code_body">
-				<pre>sudo /Developer/Library/uninstall-devtools --mode=all</pre>
-			</div>
-		</article>
-
-		<article>
-			<header>
 				<h2><a name="Stop-Help-Viewer-from-hovering" href="#Stop-Help-Viewer-from-hovering">Stop Help Viewer from hovering above other windows</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>defaults write com.apple.helpviewer DevMode -bool true</pre>
@@ -228,7 +197,6 @@
 		<article>
 			<header>
 				<h2><a name="Open-Wi-Fi-Bonjour-Scanner" href="#Open-Wi-Fi-Bonjour-Scanner">Open Wi-Fi/Bonjour Scanner</a></h2>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>open /System/Library/CoreServices/Wi-Fi\ Diagnostics.app/</pre>
@@ -237,9 +205,16 @@
 
 		<article>
 			<header>
+				<h2><a name="Turn-Off-Expose" href="#Turn-Off-Expose">Turn Off Expose</a></h2>
+			</header>
+			<div id="code_body">
+				<pre>defaults write com.apple.dock mcx-expose-disabled -bool false;killall Dock</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
 				<h2><a name="Turn-Off-Dashboard" href="#Turn-Off-Dashboard">Turn Off Dashboard</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>defaults write com.apple.dashboard mcx-disabled -boolean YES;killall Dock</pre>
@@ -249,8 +224,6 @@
 		<article>
 			<header>
 				<h2><a name="more-nice-Terminal-tricks" href="#more-nice-Terminal-tricks">more nice Terminal tricks</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<p>Open screen sharing</p>
