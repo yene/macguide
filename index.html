@@ -29,8 +29,7 @@
 				<h2><a name="Remove-Others-From-Spotlight" href="#Remove-Others-From-Spotlight">Remove the Others category from Spotlight</a></h2>
 			</header>
 			<div id="code_body">
-				<pre>defaults write com.apple.spotlight orderedItems -array-add "<dict><key>enabled</key><false/><key>name</key><string>OTHER</string></dict>";</pre>
-				<pre>killall SystemUIServer</pre>
+				<pre>defaults write com.apple.spotlight orderedItems -array-add &quot;&lt;dict&gt;&lt;key&gt;enabled&lt;/key&gt;&lt;false/&gt;&lt;key&gt;name&lt;/key&gt;&lt;string&gt;OTHER&lt;/string&gt;&lt;/dict&gt;&quot;;killall SystemUIServer</pre>
 			</div>
 		</article>
 
@@ -111,6 +110,8 @@
 		<article>
 			<header>
 				<h2><a name="Make-hidden-Applications-Icons-semi-transparent" href="#Make-hidden-Applications-Icons-semi-transparent">Make hidden Applications Icons semi-transparent</a></h2>
+				<span class="lion">lion</span>
+				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>defaults write com.apple.Dock showhidden -bool true;killall Dock</pre>
