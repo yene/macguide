@@ -98,20 +98,7 @@
 
 		<article>
 			<header>
-				<h2><a name="2D-Dock" href="#2D-Dock">2D Dock</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
-			</header>
-			<div id="code_body">
-				<pre>defaults write com.apple.dock no-glass -bool true;killall Dock</pre>
-			</div>
-		</article>
-
-		<article>
-			<header>
 				<h2><a name="Make-hidden-Applications-Icons-semi-transparent" href="#Make-hidden-Applications-Icons-semi-transparent">Make hidden Applications Icons semi-transparent</a></h2>
-				<span class="lion">lion</span>
-				<span class="mountain-lion">mountain lion</span>
 			</header>
 			<div id="code_body">
 				<pre>defaults write com.apple.Dock showhidden -bool true;killall Dock</pre>
@@ -200,7 +187,8 @@
 				<h2><a name="Open-Wi-Fi-Bonjour-Scanner" href="#Open-Wi-Fi-Bonjour-Scanner">Open Wi-Fi/Bonjour Scanner</a></h2>
 			</header>
 			<div id="code_body">
-				<pre>open /System/Library/CoreServices/Wi-Fi\ Diagnostics.app/</pre>
+				<p>press ⌘2 after</p>
+				<pre>open /System/Library/CoreServices/Applications/Wireless\ Diagnostics.app</pre>
 			</div>
 		</article>
 
@@ -219,6 +207,34 @@
 			</header>
 			<div id="code_body">
 				<pre>defaults write com.apple.dashboard mcx-disabled -boolean YES;killall Dock</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
+				<h2><a name="Disable-Notification-Center" href="#Disable-Notification-Center">Disable Notification Center</a></h2>
+			</header>
+			<div id="code_body">
+				<p>log out and log back in after</p>
+				<pre>sudo defaults write /System/Library/LaunchAgents/com.apple.notificationcenterui KeepAlive -bool false</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
+				<h2><a name="Show-One-Application-At-A-Time" href="#Show-One-Application-At-A-Time">Show One Application At A Time</a></h2>
+			</header>
+			<div id="code_body">
+				<pre>defaults write com.apple.dock single-app -bool true;killall Dock</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
+				<h2><a name="Disable-Startup-Sound" href="#Disable-Startup-Sound">Disable Startup Sound</a></h2>
+			</header>
+			<div id="code_body">
+				<pre>sudo nvram SystemAudioVolume=%80</pre>
 			</div>
 		</article>
 
