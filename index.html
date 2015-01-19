@@ -35,6 +35,16 @@
 
 		<article>
 			<header>
+				<h2><a name="Restore-volume-change-sound" href="#Restore-volume-change-sound">Restore volume change sound</a></h2>
+			</header>
+			<div id="code_body">
+				<pre>Download <a href="www.macguide.org/files/volume.aiff">www.macguide.org/files/volume.aiff</a> and save it to /System/Library/LoginPlugins/BezelServices.loginPlugin/Contents/Resources/
+				</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
 				<h2><a name="Show-the-Library-folder" href="#Show-the-Library-folder">Show the Library folder</a></h2>
 			</header>
 			<div id="code_body">
@@ -245,6 +255,8 @@
 			<div id="code_body">
 				<p>Open screen sharing</p>
 				<pre>open vnc://computername.local</pre>
+				<p>Enable screen sharing</p>
+				<pre>sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.screensharing.plist</pre>
 				<p>Open current folder in Finder</p>
 				<pre>open .</pre>
 				<p>Restart Finder</p>
