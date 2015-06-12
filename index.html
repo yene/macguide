@@ -26,25 +26,6 @@
 
 		<article>
 			<header>
-				<h2><a name="Remove-Others-From-Spotlight" href="#Remove-Others-From-Spotlight">Remove the Others category from Spotlight</a></h2>
-			</header>
-			<div id="code_body">
-				<pre>defaults write com.apple.spotlight orderedItems -array-add &quot;&lt;dict&gt;&lt;key&gt;enabled&lt;/key&gt;&lt;false/&gt;&lt;key&gt;name&lt;/key&gt;&lt;string&gt;OTHER&lt;/string&gt;&lt;/dict&gt;&quot;;killall SystemUIServer</pre>
-			</div>
-		</article>
-
-		<article>
-			<header>
-				<h2><a name="Restore-volume-change-sound" href="#Restore-volume-change-sound">Restore volume change sound</a></h2>
-			</header>
-			<div id="code_body">
-				<pre>Download <a href="www.macguide.org/files/volume.aiff">www.macguide.org/files/volume.aiff</a> and save it to /System/Library/LoginPlugins/BezelServices.loginPlugin/Contents/Resources/
-				</pre>
-			</div>
-		</article>
-
-		<article>
-			<header>
 				<h2><a name="Show-the-Library-folder" href="#Show-the-Library-folder">Show the Library folder</a></h2>
 			</header>
 			<div id="code_body">
@@ -245,6 +226,19 @@
 			</header>
 			<div id="code_body">
 				<pre>sudo nvram SystemAudioVolume=%80</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
+				<h2><a name="Remove-Apps" href="#Remove-Apps">Remove Default Apps</a></h2>
+			</header>
+			<div id="code_body">
+				<pre>
+sudo rm -rf /Applications/Chess.app
+sudo rm -rf /Applications/DVD\ Player.app
+sudo rm -rf /Applications/Stickies.app
+sudo rm -rf /Applications/Launchpad.app</pre>
 			</div>
 		</article>
 
