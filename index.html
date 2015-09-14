@@ -26,6 +26,16 @@
 
 		<article>
 			<header>
+				<h2><a name="Disabling-System-Integrity-Protection" href="#Disabling-System-Integrity-Protection">Disabling System Integrity Protection</a></h2>
+			</header>
+			<div id="code_body">
+				<p>To disable System Integrity Protection boot into the Recovery partition by pressing cmd+R at startup. Open Utilities > Terminal and run:</p>
+				<pre>csrutil disable</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
 				<h2><a name="Safari-Enable-Backspace" href="#Safari-Enable-Backspace">Safari Enable Backspace</a></h2>
 			</header>
 			<div id="code_body">
@@ -268,8 +278,13 @@ sudo rm -rf /Applications/Launchpad.app</pre>
 				<pre>killall Dock</pre>
 				<p>Start a web server, publish the current directory</p>
 				<pre>python -m SimpleHTTPServer</pre>
+				<pre>php -S 0.0.0.0:8000</pre>
 				<p>Prevent Mac from falling asleep for an hour</p>
 				<pre>caffeinate -u -t 3600</pre>
+				<p>Network Monitor</p>
+				<pre>lsof -ni -P</pre>
+				<pre>netstat -atln
+				</pre>
 			</div>
 		</article>
 		</section>
