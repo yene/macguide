@@ -1,10 +1,8 @@
 # macguide.org website
 
-all your terminal one-liners in one place, maybe
-
+All your terminal one-liners in one place, maybe.
 
 ## contributors
-
 original images and style by 
 Nils <a href="http://www.falseone.org">http://www.falseone.org</a>
 
