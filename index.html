@@ -24,6 +24,28 @@
 	<div id="container_content">
 	<section>
 
+	<article>
+		<header>
+			<h2><a name="secure-erase" href="#secure-erase">Secure Erase Hard Disk (not SSD)</a></h2>
+		</header>
+		<div id="code_body">
+			<p>List the connected disks.</p>
+			<pre>diskutil list</pre>
+
+			<p>Overwrite the disk with zeros.</p>
+			<pre>diskutil secureErase 0 /dev/diskX</pre>
+		</div>
+	</article>
+
+		<article>
+			<header>
+				<h2><a name="current-ip" href="#current-ip">Display current IP address</a></h2>
+			</header>
+			<div id="code_body">
+				<pre>ifconfig | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}'</pre>
+			</div>
+		</article>
+
 		<article>
 			<header>
 				<h2><a name="ssh-tunnel" href="#ssh-tunnel">SSH tunnel: route your traffic over a server.</a></h2>
