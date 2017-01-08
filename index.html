@@ -24,18 +24,29 @@
 	<div id="container_content">
 	<section>
 
-	<article>
-		<header>
-			<h2><a name="secure-erase" href="#secure-erase">Secure Erase Hard Disk (not SSD)</a></h2>
-		</header>
-		<div id="code_body">
-			<p>List the connected disks.</p>
-			<pre>diskutil list</pre>
+		<article>
+			<header>
+				<h2><a name="disable-gamekit" href="#disable-gamekit">Disable GameKit</a></h2>
+			</header>
+			<div id="code_body">
+				<pre>launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist</pre>
+				<p>and</p>
+				<pre>defaults write com.apple.gamed Disabled -bool true</pre>
+			</div>
+		</article>
 
-			<p>Overwrite the disk with zeros.</p>
-			<pre>diskutil secureErase 0 /dev/diskX</pre>
-		</div>
-	</article>
+		<article>
+			<header>
+				<h2><a name="secure-erase" href="#secure-erase">Secure Erase Hard Disk (not SSD)</a></h2>
+			</header>
+			<div id="code_body">
+				<p>List the connected disks.</p>
+				<pre>diskutil list</pre>
+
+				<p>Overwrite the disk with zeros.</p>
+				<pre>diskutil secureErase 0 /dev/diskX</pre>
+			</div>
+		</article>
 
 		<article>
 			<header>
@@ -65,7 +76,7 @@ networksetup -setsocksfirewallproxystate "Wi-Fi" off</pre>
 			<div id="code_body">
 				<pre>
 brew install youtube-dl
-youtube-dl -f mp4 https://www.youtube.com/watch?v=dQw4w9WgXcQ
+youtube-dl --ignore-errors -f mp4 https://www.youtube.com/watch?v=dQw4w9WgXcQ
 afconvert -d aac input.mp4 output.m4a
 				</pre>
 				<p>If you want mp4 to be your default add the following line to ~/.config/youtube-dl/config.</p>
@@ -334,6 +345,10 @@ sudo rm -rf /Applications/Launchpad.app</pre>
 				<h2><a name="more-nice-Terminal-tricks" href="#more-nice-Terminal-tricks">more nice Terminal tricks</a></h2>
 			</header>
 			<div id="code_body">
+				<p>Wakeup Reason</p>
+				<pre>log show |grep -i "Wake reason"</pre>
+				<p>gzip</p>
+				<pre>tar -czf folder_name.tar.gz folder_name/</pre>
 				<p>Open screen sharing</p>
 				<pre>open vnc://computername.local</pre>
 				<p>Enable screen sharing</p>
