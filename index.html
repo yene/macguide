@@ -37,6 +37,15 @@
 
 		<article>
 			<header>
+				<h2><a name="play-itunes" href="#play-itunes">Prevent Play button from opening iTunes</a></h2>
+			</header>
+			<div id="code_body">
+				<pre>launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
 				<h2><a name="secure-erase" href="#secure-erase">Secure Erase Hard Disk (not SSD)</a></h2>
 			</header>
 			<div id="code_body">
@@ -79,8 +88,8 @@ brew install youtube-dl
 youtube-dl --ignore-errors -f mp4 https://www.youtube.com/watch?v=dQw4w9WgXcQ
 afconvert -d aac input.mp4 output.m4a
 				</pre>
-				<p>If you want mp4 to be your default add the following line to ~/.config/youtube-dl/config.</p>
-				<pre>-f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'</pre>
+				<p>If you want 1080p mp4 to be your default add the following line to ~/.config/youtube-dl/config.</p>
+				<pre>-f 'bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/best[height<=1080][ext=mp4]/best'</pre>
 			</div>
 		</article>
 
