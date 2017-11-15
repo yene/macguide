@@ -24,15 +24,35 @@
 	<div id="container_content">
 	<section>
 
-  <article>
-    <header>
-      <h2><a name="sf-mono" href="#sf-mono">Installing SF Mono</a></h2>
-    </header>
-    <div id="code_body">
-      <p>If you want to use the SF Mono font you can find it inside the Terminal app. During install an error will be reported which you can ignore.</p>
-      <pre>open /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/</pre>
-    </div>
-  </article>
+		<article>
+			<header>
+				<h2><a name="exclude-appstore-timemachine" href="#exclude-appstore-timemachine">Exclude App Store apps from Time Machine backup</a></h2>
+			</header>
+			<div id="code_body">
+				<p>Run this once and it puts all the apps into the TM exclude.</p>
+				<pre>mdfind "kMDItemAppStoreHasReceipt=1" -onlyin /Applications/ | while read x; do sudo tmutil addexclusion -p "$x"; done</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
+				<h2><a name="disable-face-detect" href="#disable-face-detect">Disable Face Detect in Photos app</a></h2>
+			</header>
+			<div id="code_body">
+				<p>It may be the cause of high CPU usage in the background.</p>
+				<pre>defaults write com.apple.iPhoto PKFaceDetectionEnabled 0</pre>
+			</div>
+		</article>
+
+	  <article>
+	    <header>
+	      <h2><a name="sf-mono" href="#sf-mono">Installing SF Mono</a></h2>
+	    </header>
+	    <div id="code_body">
+	      <p>If you want to use the SF Mono font you can find it inside the Terminal app. During install an error will be reported which you can ignore.</p>
+	      <pre>open /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/</pre>
+	    </div>
+	  </article>
 
 		<article>
 			<header>
@@ -99,7 +119,7 @@ youtube-dl --ignore-errors -f mp4 https://www.youtube.com/watch?v=dQw4w9WgXcQ
 afconvert -d aac input.mp4 output.m4a
 				</pre>
 				<p>If you want 1080p mp4 to be your default add the following line to ~/.config/youtube-dl/config.</p>
-				<pre>-f 'bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/best[height<=1080][ext=mp4]/best'</pre>
+				<pre>-i -f 'bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/best[height<=1080][ext=mp4]/best'</pre>
 			</div>
 		</article>
 
