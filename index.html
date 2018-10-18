@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <head>
 <meta charset="utf-8">
-<title>Macguide - Change your default Settings!</title>
+<title>Macguide - Change your macOS default Settings!</title>
 <link rel="stylesheet" media="all" href="css/normalize.css">
 <link rel="stylesheet" media="all" href="css/main.css">
 <link rel="icon" type="image/png" href="img/favicon.png" />
@@ -23,6 +23,19 @@
 	</div>
 	<div id="container_content">
 	<section>
+
+		<!-- https://appletoolbox.com/2018/09/how-to-fix-blurry-text-after-upgrading-to-macos-mojave/
+		<article>
+			<header>
+				<h2><a name="subpixel-antialiasing-mojave" href="#subpixel-antialiasing-mojave">Enable Subpixel Antialiasing on macOS Mojave</a></h2>
+			</header>
+			<div id="code_body">
+				<p>Light font smoothing (1)</p>
+				<pre>defaults -currentHost write -globalDomain AppleFontSmoothing -int 1</pre>
+				<p>No font smoothing (0)</p>
+				<pre>defaults -currentHost write -globalDomain AppleFontSmoothing -int 0</pre>
+			</div>
+		</article> -->
 
 		<article>
 			<header>
@@ -49,7 +62,7 @@
 	      <h2><a name="sf-mono" href="#sf-mono">Installing SF Mono</a></h2>
 	    </header>
 	    <div id="code_body">
-	      <p>If you want to use the SF Mono font you can find it inside the Terminal app. During install an error will be reported which you can ignore.</p>
+	      <p>If you want to use the SF Mono font you can find it inside the Terminal app.</p>
 	      <pre>open /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/</pre>
 	    </div>
 	  </article>
@@ -93,6 +106,15 @@
 			</header>
 			<div id="code_body">
 				<pre>ifconfig | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}'</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
+				<h2><a name="who-uses-port" href="#who-uses-port">Find out which app uses port X</a></h2>
+			</header>
+			<div id="code_body">
+				<pre>lsof -i tcp:8000</pre>
 			</div>
 		</article>
 
@@ -417,6 +439,6 @@ sudo rm -rf /Applications/Launchpad.app</pre>
 </div>
 
 <div id="footer">
-Created by <b><a href="https://github.com/yene">yene</a></b> • Design by <b><a href="http://www.falseone.org">Falseone®</a></b></div>
+Created by <b><a href="https://www.yannickweiss.com">Yannick Weiss</a></b></div>
 </body>
 </html>
