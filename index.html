@@ -24,18 +24,21 @@
 	<div id="container_content">
 	<section>
 
-		<!-- https://appletoolbox.com/2018/09/how-to-fix-blurry-text-after-upgrading-to-macos-mojave/
 		<article>
 			<header>
-				<h2><a name="subpixel-antialiasing-mojave" href="#subpixel-antialiasing-mojave">Enable Subpixel Antialiasing on macOS Mojave</a></h2>
+				<h2><a name="bash-replace-file-extension" href="#bash-replace-file-extension">Replace File Extension in Bash</a></h2>
 			</header>
 			<div id="code_body">
-				<p>Light font smoothing (1)</p>
-				<pre>defaults -currentHost write -globalDomain AppleFontSmoothing -int 1</pre>
-				<p>No font smoothing (0)</p>
-				<pre>defaults -currentHost write -globalDomain AppleFontSmoothing -int 0</pre>
+				<p>For example replacing png with webp:</p>
+				<pre>
+f="test file.png"
+noExt=${f%.*}
+echo $noExt
+newExt="$noExt".webp
+echo $newExt
+				</pre>
 			</div>
-		</article> -->
+		</article>
 
 		<article>
 			<header>
@@ -111,6 +114,16 @@
 
 		<article>
 			<header>
+				<h2><a name="who-uses-port" href="#list-open-ports">List open ports</a></h2>
+			</header>
+			<div id="code_body">
+				<p>There is a cool app for this called <a href="https://sveinbjorn.org/sloth">Sloth</a>, or in the Terminal:
+				<pre>lsof -P -i -n</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
 				<h2><a name="who-uses-port" href="#who-uses-port">Find out which app uses port X</a></h2>
 			</header>
 			<div id="code_body">
@@ -167,19 +180,11 @@ afconvert -d aac input.mp4 output.m4a
 
 		<article>
 			<header>
-				<h2><a name="Safari-Enable-Backspace" href="#Safari-Enable-Backspace">Safari Enable Backspace</a></h2>
-			</header>
-			<div id="code_body">
-				<pre>defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES</pre>
-			</div>
-		</article>
-
-		<article>
-			<header>
 				<h2><a name="Show-the-Library-folder" href="#Show-the-Library-folder">Show the Library folder</a></h2>
 			</header>
 			<div id="code_body">
-				<pre>chflags nohidden ~/Library</pre>
+				<pre>Right click in the home folder, select "Show View Options", at the bottom you can enable "Show Library Folder"</pre>
+				<p>Alternative you can press: shift-cmd-. to show hidden files.</p>
 			</div>
 		</article>
 
@@ -188,6 +193,7 @@ afconvert -d aac input.mp4 output.m4a
 				<h2><a name="reset-dns" href="#reset-dns">Clear DNS Cache</a></h2>
 			</header>
 			<div id="code_body">
+				<p>Screenshot file format and change extension to lowercase</p>
 				<pre>sudo killall -HUP mDNSResponder</pre>
 			</div>
 		</article>
@@ -243,15 +249,6 @@ afconvert -d aac input.mp4 output.m4a
 			</header>
 			<div id="code_body">
 				<pre>defaults write -g ApplePressAndHoldEnabled -bool false</pre>
-			</div>
-		</article>
-
-		<article>
-			<header>
-				<h2><a name="Make-hidden-Applications-Icons-semi-transparent" href="#Make-hidden-Applications-Icons-semi-transparent">Make hidden Applications Icons semi-transparent</a></h2>
-			</header>
-			<div id="code_body">
-				<pre>defaults write com.apple.Dock showhidden -bool true;killall Dock</pre>
 			</div>
 		</article>
 
@@ -390,14 +387,15 @@ afconvert -d aac input.mp4 output.m4a
 
 		<article>
 			<header>
-				<h2><a name="Remove-Apps" href="#Remove-Apps">Remove Default Apps</a></h2>
+				<h2><a name="Checking-external-USB-stick" href="#Checking-external-USB-stick">Checking external USB stick </a></h2>
 			</header>
 			<div id="code_body">
+				<p>Format it for macOS and then use fsck_hfs with "-S" for scanning.</p>
 				<pre>
-sudo rm -rf /Applications/Chess.app
-sudo rm -rf /Applications/DVD\ Player.app
-sudo rm -rf /Applications/Stickies.app
-sudo rm -rf /Applications/Launchpad.app</pre>
+diskutil list
+diskutil unmountDisk /dev/diskXXXX
+sudo fsck_hfs -fy -S /dev/diskXXXX
+(press ctrl-t for progress)</pre>
 			</div>
 		</article>
 
