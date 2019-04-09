@@ -26,16 +26,10 @@
 
 		<article>
 			<header>
-				<h2><a name="bash-replace-file-extension" href="#bash-replace-file-extension">Replace File Extension in Bash</a></h2>
+				<h2><a name="enabling-Safari-backspace" href="#enabling-Safari-backspace">Enable Safari Backspace</a></h2>
 			</header>
 			<div id="code_body">
-				<p>For example replacing png with webp:</p>
-				<pre>
-f="test file.png"
-noExt=${f%.*}
-echo $noExt
-newExt="$noExt".webp
-echo $newExt</pre>
+				<pre>defaults write com.apple.Safari NSUserKeyEquivalents -dict-add Back "\U232b"</pre>
 			</div>
 		</article>
 
@@ -395,6 +389,21 @@ diskutil list
 diskutil unmountDisk /dev/diskXXXX
 sudo fsck_hfs -fy -S /dev/diskXXXX
 (press ctrl-t for progress)</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
+				<h2><a name="bash-replace-file-extension" href="#bash-replace-file-extension">Replace File Extension in Bash</a></h2>
+			</header>
+			<div id="code_body">
+				<p>For example replacing png with webp:</p>
+				<pre>
+f="test file.png"
+noExt=${f%.*}
+echo $noExt
+newExt="$noExt".webp
+echo $newExt</pre>
 			</div>
 		</article>
 
