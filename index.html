@@ -410,6 +410,21 @@ echo $newExt</pre>
 
 		<article>
 			<header>
+				<h2><a name="restore-modification-date" href="#restore-modification-date">Restoring Modification Date of a File</a></h2>
+			</header>
+			<div id="code_body">
+				<pre>
+f="test file.png"
+dc="$(GetFileInfo -d "$f")" # store creation date
+dm="$(GetFileInfo -m "$f")" # store modification date
+# change the file here
+SetFile -d "$dc" "$f" # restore creation date
+SetFile -m "$dm" "$f" # restore modification date</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
 				<h2><a name="more-nice-Terminal-tricks" href="#more-nice-Terminal-tricks">more nice Terminal tricks</a></h2>
 			</header>
 			<div id="code_body">
