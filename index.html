@@ -26,15 +26,6 @@
 
 		<article>
 			<header>
-				<h2><a name="enabling-Safari-backspace" href="#enabling-Safari-backspace">Enable Safari Backspace</a></h2>
-			</header>
-			<div id="code_body">
-				<pre>defaults write com.apple.Safari NSUserKeyEquivalents -dict-add Back "\U232b"</pre>
-			</div>
-		</article>
-
-		<article>
-			<header>
 				<h2><a name="exclude-appstore-timemachine" href="#exclude-appstore-timemachine">Exclude App Store apps from Time Machine backup</a></h2>
 			</header>
 			<div id="code_body">
@@ -170,6 +161,16 @@ afconvert -d aac input.mp4 output.m4a
 				<pre>csrutil disable</pre>
 			</div>
 		</article>
+
+    <article>
+      <header>
+        <h2><a name="enabling-Safari-backspace" href="#enabling-Safari-backspace">Enable Safari Backspace</a></h2>
+      </header>
+      <div id="code_body">
+        <p>For this to work you need to disable system integrity protection.</p>
+        <pre>defaults write com.apple.Safari NSUserKeyEquivalents -dict-add Back "\U232b"</pre>
+      </div>
+    </article>
 
 		<article>
 			<header>
