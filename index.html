@@ -26,10 +26,88 @@
 
 		<article>
 			<header>
+				<h2><a name="macos-terminal-emulate-86_64" href="#macos-terminal-emulate-86_64">Emulate 86_64 in Terminal</a></h2>
+			</header>
+			<div id="code_body">
+				<p>Start an x86_64 emulated shell, every command is also emulated.</p>
+				<pre>arch -x86_64 zsh</pre>
+			</div>
+		</article>
+
+
+		<article>
+			<header>
+				<h2><a name="how-to-use-latest-bash" href="#how-to-use-latest-bash">Using latest bash</a></h2>
+			</header>
+			<div id="code_body">
+				<p>macOS stopped updating bash and switched to zsh. You can install bash with:</p>
+				<pre>brew install bash</pre>
+				<p>
+					After that point bash -version should print version 5. In your scripts you should not reference /bin/bash anymore but env.
+				</p>
+				<pre>#!/usr/bin/env bash</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
+				<h2><a name="trust-downloaded-binaries" href="#trust-downloaded-binaries">Trust Downloaded Binaries</a></h2>
+			</header>
+			<div id="code_body">
+				<p>Check if binary is quarantined</p>
+				<pre>xattr bin/cache/artifacts/libimobiledevice/idevice_id</pre>
+				<p>Remove binary from quarantine</p>
+				<pre>sudo xattr -d com.apple.quarantine bin/cache/artifacts/libimobiledevice/idevice_id </pre>
+				<p>Remove all attributes</p>
+				<pre>sudo xattr -c bin/cache/artifacts/libimobiledevice/idevice_id </pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
+				<h2><a name="disable-spotlight-timemachine" href="disable-spotlight-timemachine">Fix Spotlight Index</a></h2>
+			</header>
+			<div id="code_body">
+				<p>Disable indexing on all connected drives.</p>
+				<pre>sudo mdutil -a -i off</pre>
+        <p>Reboot</p>
+				<p>Enable indexing /</p>
+				<pre>sudo mdutil -i on /</pre>
+				<p>Erase and rebuild index</p>
+				<pre>sudo mdutil -E /</pre>
+        <p>Debug Spotlight</p>
+        <pre>sudo mddiagnose</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
+				<h2><a name="allow-apps-downloaded-from-anywhere" href="#allow-apps-downloaded-from-anywhere">Allow apps downloaded from anywhere</a></h2>
+			</header>
+			<div id="code_body">
+				<pre>sudo spctl --master-disable</pre>
+				<p>alternative: control-click on it and choose Open</p>
+			</div>
+		</article>
+
+
+
+		<article>
+			<header>
+				<h2><a name="remove-time-machine-snapshots" href="#remove-time-machine-snapshots">Remove Time Machine Snapshots</a></h2>
+			</header>
+			<div id="code_body">
+				<p>You can not disable local Time Machine snapshots, but you can remove them like this:</p>
+				<pre>tmutil listlocalsnapshotdates / | grep 20 | while read f; do tmutil deletelocalsnapshots $f; done </pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
 				<h2><a name="exclude-appstore-timemachine" href="#exclude-appstore-timemachine">Exclude App Store apps from Time Machine backup</a></h2>
 			</header>
 			<div id="code_body">
-				<p>Run this once and it puts all the apps into the TM exclude.</p>
+				<p>Run this once and it puts all the apps downloaded from the App Store into the TM exclude.</p>
 				<pre>mdfind "kMDItemAppStoreHasReceipt=1" -onlyin /Applications/ | while read x; do sudo tmutil addexclusion -p "$x"; done</pre>
 			</div>
 		</article>
@@ -425,6 +503,18 @@ SetFile -m "$dm" "$f" # restore modification date</pre>
 
 		<article>
 			<header>
+				<h2><a name="webserver-macos-directory" href="#webserver-macos-directory">Run a Webserver from current directory</a></h2>
+			</header>
+			<div id="code_body">
+				<p>Start a webserver that publishes the current directory</p>
+				<pre>python -m http.server 8000</pre>
+				<p>or</p>
+				<pre>php -S 0.0.0.0:8000</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
 				<h2><a name="more-nice-Terminal-tricks" href="#more-nice-Terminal-tricks">more nice Terminal tricks</a></h2>
 			</header>
 			<div id="code_body">
@@ -442,9 +532,7 @@ SetFile -m "$dm" "$f" # restore modification date</pre>
 				<pre>killall Finder</pre>
 				<p>Restart Dock</p>
 				<pre>killall Dock</pre>
-				<p>Start a web server, publish the current directory</p>
-				<pre>python -m SimpleHTTPServer</pre>
-				<pre>php -S 0.0.0.0:8000</pre>
+
 				<p>Prevent Mac from falling asleep for an hour</p>
 				<pre>caffeinate -u -t 3600</pre>
 				<p>Network Monitor</p>
@@ -461,6 +549,6 @@ SetFile -m "$dm" "$f" # restore modification date</pre>
 </div>
 
 <div id="footer">
-Created by <b><a href="https://www.yannickweiss.com">Yannick Weiss</a></b></div>
+Created by <b><a href="https://yannick.dev">Yannick Weiss</a></b></div>
 </body>
 </html>
