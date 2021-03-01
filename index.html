@@ -26,6 +26,28 @@
 
 		<article>
 			<header>
+				<h2><a name="enable-touchid-for-sudo" href="#enable-touchid-for-sudo">Enable TouchID for sudo</a></h2>
+			</header>
+			<div id="code_body">
+				<p>Open the sudo utility</p>
+				<pre>sudo vi /etc/pam.d/sudo</pre>
+				<p>Add the following as the first line</p>
+				<pre>auth sufficient pam_tid.so</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
+				<h2><a name="macos-disable-chime" href="#macos-disable-chime">Disable the chime sound when plugging in power</a></h2>
+			</header>
+			<div id="code_body">
+				<pre>defaults write com.apple.PowerChime ChimeOnNoHardware -bool true</pre>
+				<pre>killall PowerChime</pre>
+			</div>
+		</article>
+
+		<article>
+			<header>
 				<h2><a name="macos-terminal-emulate-86_64" href="#macos-terminal-emulate-86_64">Emulate 86_64 in Terminal</a></h2>
 			</header>
 			<div id="code_body">
